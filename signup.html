@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function saveData() {
+            var uname = document.getElementById("txt1").value
+            var uemail = document.getElementById("txt2").value
+            var umobile = document.getElementById("txt4").value
+            var upassword = document.getElementById("txt3").value
+
+            // save data in localstorage
+            localStorage.setItem("name", uname)
+            localStorage.setitem("email", uemail)
+            localStorage.setItem("password", upassword)
+            localStorage.setItem("mobile", umobile)
+            alert("Thank you for Creating Account")
+        }
+    </script>
+</head>
+<body>
+    Name: <input type="text" id="txt1" /><br>
+    Email: <input type="text" id="txt2" /><br>
+    Password: <input type="text" id="txt3" /><br>
+    Mobile: <input type="text" id="txt4" /><br>
+    <input value="Signup" type="button" onclick="saveData()" />
+</body>
+</html>

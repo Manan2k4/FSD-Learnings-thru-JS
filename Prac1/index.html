@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Programming Language Voting</title>
+</head>
+
+<style>
+    body {
+        text-align: center;
+        font-family: sans-serif;
+        margin-top: 50px;
+    }
+</style>
+
+<body>
+
+  <h2>Vote for Your Favorite Language</h2>
+
+  <button onclick="castVote('python')">Python</button>
+  <button onclick="castVote('javascript')">JavaScript</button>
+  <button onclick="castVote('java')">Java</button>
+
+  <div>
+    <p>Python: <span id="pythonVotes">0</span></p>
+    <p>JavaScript: <span id="javascriptVotes">0</span></p>
+    <p>Java: <span id="javaVotes">0</span></p>
+  </div>
+
+  <script>
+    // Vote counters
+    let votes = {
+      python: 0,
+      javascript: 0,
+      java: 0
+    };
+
+    function castVote(language) {
+      votes[language]++;
+      document.getElementById(language + 'Votes').textContent = votes[language];
+    }
+  </script>
+
+</body>
+</html>

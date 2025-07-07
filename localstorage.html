@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function saveObj() {
+            var a = {
+                name: "Manan",
+                gender:"Male",
+                age:20,
+                city:"Rajkot",
+
+            }
+            //convert data to string
+            var mydata = JSON.stringify(a)
+            //document.write(mydata)
+            localStorage.setItem("usera", mydata)
+        }
+        function saveData() {
+            localStorage.setItem("name", "Manan");
+            localStorage.setItem("city", "Rajkot");
+            document.getElementById("ans").innerHTML = "Data Saved"
+        }
+        function getData() {
+            var a = localStorage.getItem("name")
+            console.log("Name is " + a)
+            document.getElementById("ans").innerHTML = "Name is " + a
+        }
+        function getObj() {
+            var a = localStorage.getItem("usera")
+            //convert data to object
+            var mydata = JSON.parse(a)
+            document.getElementById("ans").innerHTML = "Name is " + mydata.name + "Gender is " + mydata.gender
+        }
+        function removeData() {
+            localStorage.removeItem("name")
+            localStorage.removeItem("city")
+            document.getElementById("ans").innerHTML = "Removed"
+        }
+        function removeAll() {
+            localStorage.clear()
+            document.getElementById("ans").innerHTML = "Removed all key"
+        }
+</script>
+</head>
+<body>
+    <p id="ans"></p>
+    <input type="button" value="Save" onclick="saveData()" />
+    <input type="button" value="SaveObj" onclick="saveObj()" />
+    <input type="button" value="Get" onclick="getData()" />
+    <input type="button" value="GetObj" onclick="getObj()" />
+    <input type="button" value="Remove" onclick="removeData()" />
+    <input type="button" value="RemoveAll" onclick="removeAll()" />
+</body>
+</html>

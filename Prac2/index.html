@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <p>Select city to view temperature:</p>
+    <select onchange="fetchTemp(this.value)">
+        <option value="">Select a city</option>
+        <option value="rajkot">Rajkot</option>
+        <option value="surat">Surat</option>
+        <option value="ahmedabad">Ahmedabad</option>
+        <option value="dwarka">Dwarka</option>
+    </select>
+
+    <p id="output"></p>
+
+    <script>
+        let temperatures = {
+            rajkot: 34,
+            ahmedabad: 38,
+            surat: 30,
+            dwarka: 28
+        };
+
+        function fetchTemp(city){
+            if (city && temperatures[city] !== undefined) {
+                document.getElementById('output').textContent = `${city.toUpperCase()}: ${temperatures[city]}°C`;
+            } else {
+                document.getElementById('output').textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>
