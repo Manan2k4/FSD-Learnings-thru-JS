@@ -1,0 +1,3 @@
+Nodejs runs on modules
+3 types of modules:
+    -> Core
