@@ -5,17 +5,14 @@ const port = 3000
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
-
 app.get('/home', (req, res) => {
-  res.send(__dirname+'/home.html')
+  res.sendFile(__dirname+'/home.html')
 })
-
 app.get('/about', (req, res) => {
-  res.send('Hello About!')
+  res.sendFile(__dirname+'/about.html')
 })
-
-app.get('/', (req, res) => {
-  res.send('Hello Contact!')
+app.get('/contact', (req, res) => {
+  res.sendFile(__dirname+'/contact.html')
 })
 
 app.listen(port, () => {
