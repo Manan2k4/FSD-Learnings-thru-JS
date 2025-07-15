@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "name": "fsd",
+  "version": "1.0.0",
+  "main": "anonymous_func_as_args.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manan2k4/FSD-Learnings-thru-JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manan2k4/FSD-Learnings-thru-JS/issues"
+  },
+  "homepage": "https://github.com/Manan2k4/FSD-Learnings-thru-JS#readme",
+  "description": ""
 }
