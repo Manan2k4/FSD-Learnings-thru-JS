@@ -7,7 +7,7 @@ import Demo1 from './components/demo1'
 function App() {
   return (
     <>
-      <Demo1/>
+      <Demo1 dept="CSE" institute="CSPIT"/>
     </>
   )
 }
