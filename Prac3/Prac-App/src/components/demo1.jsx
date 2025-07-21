@@ -7,6 +7,7 @@ const Demo1 = (props) => {
     return(
         <div>
             <h1>Welcome - {props.dept}, {props.institute}</h1>
+            {props.children}
         </div>
     )
 }
