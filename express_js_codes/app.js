@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.use(express.static('public'))
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -32,13 +34,33 @@ app.get('/search', (req, res) => {
   res.send("QueryString Value is: "+qq)
 })
 
+// // http://127.0.0.1:3000/sum
 app.get('/sum', (req, res) => {
   res.sendFile(__dirname + '/sumdemo.html')
 })
 
+// u get redirected from sum page to here: http://127.0.0.1:3000/sumprocess
 app.get('/sumprocess', (req, res) => {
   var a = req.query.txt1
   var b = req.query.txt2
   var c = parseInt(a) + parseInt(b)
   res.send(`A value is ${a} <br/>B value is ${b} <br/>Sum is ${c}`)
+})
+
+// http://127.0.0.1:3000/homepage
+app.set('views',__dirname+'/views')
+app.set('view engine', 'ejs')
+app.get('/homepage', (req, res) => {
+  res.render('home', {"mya":"Manan"})
+})
+
+app.use(express.urlencoded())
+app.get('/marksheet', (req, res) => {
+  res.render('marksheet')
+})
+app.post('/marksheetprocess', (req, res) => {
+  var a = req.body.txt1
+  var b = req.body.txt2
+  var c = parseInt(a) + parseInt(b)
+  res.render('ans', {'mya':a, 'myb':b, 'myc':c})
 })
