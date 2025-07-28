@@ -13,7 +13,7 @@ function App() {
       <Demo1>
         <button>Action</button>
       </Demo1>
-      <Demo2 dept='CSE'/>
+      <Demo2/>
     </>
   )
 }

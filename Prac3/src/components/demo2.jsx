@@ -2,8 +2,11 @@ import { Component } from "react";
 
 class Demo2 extends Component {
     render(){
+        const {dept, institute} = this.props
         return(
-            <h1>Welcome,to Charusat-CSPIT</h1>
+            <div>
+                <h1>Welcome to Charusat - {dept}, {institute}</h1>
+            </div>
         )
     }
 }
