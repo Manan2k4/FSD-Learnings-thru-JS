@@ -15,8 +15,8 @@ class Parent extends Component {
     render() {
         return (
             <div>
-            <button onclick="{() => this.changeToggle()}">Toggle button</button>
-            {this.state.t && <LifecycleMount/>}
+                <button onclick="{() => this.changeToggle()}">Toggle button</button>
+                {this.state.t && <LifecycleMount/>}
             </div>
         )
     }
