@@ -6,11 +6,15 @@ import './App.css'
 // import Demo2 from './components/demo2'
 // import Message from './components/Message'
 import Counter from './components/Counter'
+import LifecycleMount from './components/LifecycleMount'
+import Parent from './components/Parent'
 
 function App() {
   return (
     <>
+      <LifecycleMount/>
       <Counter/>
+      <Parent/>
     </>
   )
 }
