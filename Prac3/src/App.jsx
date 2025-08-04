@@ -5,16 +5,14 @@ import './App.css'
 // import Demo1 from './components/demo1'
 // import Demo2 from './components/demo2'
 // import Message from './components/Message'
-import Counter from './components/Counter'
+import CounterHooks from './components/CounterHooks'
 import LifecycleMount from './components/LifecycleMount'
 import Parent from './components/Parent'
 
 function App() {
   return (
     <>
-      <LifecycleMount/>
-      <Counter/>
-      <Parent/>
+      <CounterHooks/>
     </>
   )
 }
