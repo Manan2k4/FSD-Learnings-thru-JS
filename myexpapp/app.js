@@ -3,6 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose')
+
+/* MongoDB connection start */
+mongoose.connect('mongodb://127.0.0.1:27017/charusat1')
+.then(res => console.log("DB Connected"))
+.catch(res => console.log("Error in DB Connection " + err))
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

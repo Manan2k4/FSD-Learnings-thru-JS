@@ -11,5 +11,11 @@ router.get('/home', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   res.render('about');
 });
+router.get('/add-student', function(req, res, next) {
+  res.render('add-student');
+});
+router.post('/add-student-process', function(req, res, next) {
+  console.log(req.body)
+});
 
 module.exports = router;
