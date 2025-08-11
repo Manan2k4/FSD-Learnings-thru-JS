@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+// Import Model
+var StudentModel = require('../models/Student');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,7 +17,33 @@ router.get('/add-student', function(req, res, next) {
   res.render('add-student');
 });
 router.post('/add-student-process', function(req, res, next) {
-  console.log(req.body)
+  var StudentData = {
+    sname: req.body.txt1,
+    semail: req.body.txt2,
+    smobile: req.body.txt3
+  }
+
+  var myData = StudentModel(StudentData)
+  //Save in Database
+  myData.save()
+    .then(() => {
+      res.send("Data Added")
+    })
+});
+router.get('/display-student', function(req, res, next) {
+  StudentModel.find()
+  .then(data => {
+    console.log(data)
+    res.render('display-student', {mydata:data})
+  })
+});
+
+router.get('/display-student-api', function(req, res, next) {
+  StudentModel.find()
+  .then(data => {
+    console.log(data)
+    res.json(data)
+  })
 });
 
 module.exports = router;

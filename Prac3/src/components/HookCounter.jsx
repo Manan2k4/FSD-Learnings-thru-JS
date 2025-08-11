@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 
-function HookCounter2() {
-    const initialCount = 0
-    const [count, setCount] = useState(initialCount)
+const HookCounter = () =>  {
+    const [count, setCount] = useState()
 
     const incrementFive = () => {
         for(let i = 0; i < 5; i++) {
