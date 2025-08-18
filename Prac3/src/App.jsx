@@ -8,11 +8,12 @@ import './App.css'
 import CounterHooks from './components/CounterHooks'
 import LifecycleMount from './components/LifecycleMount'
 import Parent from './components/Parent'
+import Counter from './components/Counter'
 
 function App() {
   return (
     <>
-      <CounterHooks/>
+      <Counter/>
     </>
   )
 }
