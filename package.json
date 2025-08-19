@@ -1,11 +1,11 @@
 {
   "dependencies": {
+    "mongoose": "^8.17.2",
     "nodemon": "^3.1.10"
   },
   "name": "fsd",
   "version": "1.0.0",
   "main": "anonymous_func_as_args.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
