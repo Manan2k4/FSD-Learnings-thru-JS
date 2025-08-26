@@ -14,9 +14,9 @@ router.get('/add-product', function(req, res, next) {
 
 router.post('/add-product-process', function(req, res, next) {
   var mydata = {
-    pname:req.body.txt1,
+    ptype:req.body.txt1,
     pdetails:req.body.txt2,
-    pprice:req.body.txt3
+    psize:req.body.txt3
   }
 
   // Assign data to model
@@ -50,17 +50,17 @@ router.get('/edit-product/:id', function(req, res, next) {
   var myid = req.params.id
   ProductModel.findById(myid)
   .then((mydata) => {
-    res.render('edit-process', {mydata:mydata})
+    res.render('edit-product', {mydata:mydata})
   })
   .catch((err) => console.log(err))
 });
 
-router.post('/update-product-process', function(req, res, next) {
+router.post('/update-product-process/:id', function(req, res, next) {
   var myid = req.params.id
   var mydata = {
-    pname:req.body.txt1,
+    ptype:req.body.txt1,
     pdetails:req.body.txt2,
-    pprice:req.body.txt3
+    psize:req.body.txt3
   }
   ProductModel.findByIdAndUpdate(myid, mydata)
   .then((mydata) => {

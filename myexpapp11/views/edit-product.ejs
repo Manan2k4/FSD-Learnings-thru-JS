@@ -7,10 +7,10 @@
 </head>
 <body>
     <form method="post" action="/update-product-process/<%= mydata._id %>">
-        Product Name: <input type="text" value="<%= mydata.pname %>" name="txt1" placeholder="Enter Product Name" required><br>
+        Product Name: <input type="text" value="<%= mydata.ptype %>" name="txt1" placeholder="Enter Product Name" required><br>
         Details: <input type="text" value="<%= mydata.pdetails %>" name="txt2" placeholder="Enter Product Details" required><br>
-        Price: <input type="text" value="<%= mydata.pprice %>" name="txt3" placeholder="Enter Product Price" required><br>
-        <input type="submit">
+        Price: <input type="text" value="<%= mydata.psize %>" name="txt3" placeholder="Enter Product Price" required><br>
+        <input value="Update" type="submit">
     </form>
 </body>
 </html>

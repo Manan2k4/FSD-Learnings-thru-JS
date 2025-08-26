@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Product</title>
 </head>
 <body>
     <form method="post" action="/add-product-process">
-        Product Name: <input type="text" name="txt1" placeholder="Enter Product Name" required><br>
-        Details: <input type="text" name="txt2" placeholder="Enter Product Details" required><br>
-        Price: <input type="text" name="txt3" placeholder="Enter Product Price" required><br>
-        <input type="submit">
+        <table> 
+            <tr>
+                <td>Type: </td>
+                <td><input type="text" name="txt1" placeholder="Enter Product Type" required></td>
+            </tr>
+            <tr>
+                <td>Name/Code: </td>
+                <td><input type="text" name="txt2" placeholder="Enter Product Name/Code" required></td>
+            </tr>
+            <tr>
+                <td>Size: </td>
+                <td><input type="text" name="txt3" placeholder="Enter Size" required></td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;</td>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
