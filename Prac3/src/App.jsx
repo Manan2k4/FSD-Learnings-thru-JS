@@ -1,21 +1,28 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
-// import Demo1 from './components/demo1'
-// import Demo2 from './components/demo2'
-// import Message from './components/Message'
-import CounterHooks from './components/CounterHooks'
-import LifecycleMount from './components/LifecycleMount'
-import Parent from './components/Parent'
-import Counter from './components/Counter'
-
+import React from 'react'
+import axios from 'axios';
+import { useState } from 'react';
+import './Style.css'
 function App() {
+  const [ProductData,setProductData] = useState([]);
+
+  React.useEffect(()=>{
+    axios.get("https://fakestoreapi.com/products")
+    .then(res=>setProductData(res.data))
+    .catch(err=>console.log(err))
+  },[])
+
   return (
     <>
-      <Counter/>
+      <div className="main"></div>
+        {ProductData.map((product) => (
+          <div key={product.id}>
+            <img src="{product.image}" alt="" />
+            <h1>{product.title}</h1>
+            <p>Price: ${product.price}</p>
+        </div>
+      ))}
     </>
   )
 }
 
-export default App
+export default App;

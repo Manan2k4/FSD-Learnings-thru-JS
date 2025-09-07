@@ -37,6 +37,16 @@ router.get('/display-product', function(req, res, next) {
   .catch((err) => console.log(err))
 });
 
+router.get('/display-product-api', function(req, res, next) {
+  ProductModel.find()
+  .then((mydata) => {
+    console.log(mydata)
+    // res.render('display-product', {mydata:mydata})
+    res.json(mydata)
+  })
+  .catch((err) => console.log(err))
+});
+
 router.get('/delete-product/:id', function(req, res, next) {
   var myid = req.params.id
   ProductModel.findByIdAndDelete(myid)

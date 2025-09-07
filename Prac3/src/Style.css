@@ -1,0 +1,21 @@
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product{
+    height: 300px;
+    width: 200px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.product:hover{
+    box-shadow: 2px 2px 2px black;
+}
+
+h1{
+    font-size: medium;
+}
