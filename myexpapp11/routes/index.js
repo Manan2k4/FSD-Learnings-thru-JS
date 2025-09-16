@@ -8,6 +8,19 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/file-upload', function(req, res, next){
+  res.render('fileupload-form');
+});
+
+router.post('/file-upload', function(req, res, next){
+  console.log(req.files.file123)
+
+  var myfile = req.files.file123
+  myfile.mv("public/uploads/" + myfile.name, function(err){
+    res.send("File Uploaded")
+  })
+});
+
 router.get('/add-product', function(req, res, next) {
   res.render('add-product');
 });

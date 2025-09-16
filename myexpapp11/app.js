@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require("mongoose")
+var mongoose = require("mongoose");
+var fileupload = require("express-fileupload");
+var cors = require("cors");
 
 /* MongoDB connection start */
 mongoose.connect('mongodb://127.0.0.1:27017/charusat1')
@@ -24,6 +26,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileupload());
+app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
