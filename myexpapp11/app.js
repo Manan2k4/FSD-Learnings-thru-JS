@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require("mongoose");
 var fileupload = require("express-fileupload");
 var cors = require("cors");
+var session = require("express-session");
 
 /* MongoDB connection start */
 mongoose.connect('mongodb://127.0.0.1:27017/charusat1')
@@ -28,6 +29,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileupload());
 app.use(cors());
+// Session code
+app.use(session({secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
